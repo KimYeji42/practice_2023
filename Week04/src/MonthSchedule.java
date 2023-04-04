@@ -1,119 +1,55 @@
-//import java.util.ArrayList;
-//import java.util.Scanner;
-//class Day {
-//    private ArrayList<String> plan;
-//
-//    public Day() {
-//        plan = new ArrayList<>();
-//    }
-//
-//    public void addPlan(String newPlan) {
-//        plan.add(newPlan);
-//    }
-//    public void AllPlan() {
-//        System.out.println("스케줄 목록");
-//        for (int i = 0; i < plan.size(); i++) {
-//            System.out.println((i+1) + ". " + plan.get(i));
-//        }
-//        if(plan == null)
-//            System.out.println("없습니다.");
-//    }
-//
-//    public String getPlan(int index) {
-//        if (index < 1 || index > plan.size()) {
-//            return "잘못된 번호입니다.";
-//        }
-//        return plan.get(index-1);
-//    }
-//
-//    public int size() {
-//        return plan.size();
-//    }
-//}
-//
-//public class MonthSchedule {
-//    private ArrayList<Day> days;
-//    private Scanner in;
-//
-//    public MonthSchedule() {
-//        days = new ArrayList<>();
-//        for (int i = 0; i < 31; i++) {
-//            days.add(new Day());
-//        }
-//        in = new Scanner(System.in);
-//    }
-//
-//    public void addPlan() {
-//        System.out.println("스케줄을 등록할 날짜를 입력하세요. (숫자만 입력)");
-//        System.out.println("==========================================================");
-//        int day = Integer.parseInt(in.nextLine());
-//        if (day < 1 || day > 31) {
-//            System.out.println("잘못된 날짜입니다.");
-//            System.out.println("==========================================================");
-//
-//            return;
-//        }
-//        System.out.println("등록할 스케줄을 입력하세요");
-//        System.out.println("==========================================================");
-//
-//        String newPlan = in.nextLine();
-//        days.get(day - 1).addPlan(newPlan);
-//        System.out.println("스케줄이 등록되었습니다.");
-//        System.out.println("==========================================================");
-//
-//    }
-//
-//
-//    public void viewPlan() {
-//        System.out.println("==========================================================");
-//        System.out.println("스케줄을 조회할 날짜를 입력하세요(1-31)");
-//        System.out.println("==========================================================");
-//        int day = Integer.parseInt(in.nextLine());
-//        if (day < 1 || day > 31) {
-//            System.out.println("잘못된 날짜입니다.");
-//            return;
-//        }
-//
-//        Day selectDay = days.get(day - 1);
-//
-//        if(selectDay.getPlan().isEmpty()) {
-//            System.out.println("스케줄이 없습니다.");
-//            return;
-//        }
-//        selectDay.AllPlan();
-//    }
-//
-//    public void run() {
-//        while (true) {
-//            System.out.println("원하는 작업을 선택하세요.");
-//            System.out.println("==========================================================");
-//            System.out.println("1. 스케줄 추가");
-//            System.out.println("2. 스케줄 조회");
-//            System.out.println("3. 종료");
-//            System.out.println("==========================================================");
-//
-//            int num = Integer.parseInt(in.nextLine());
-//
-//            switch (num) {
-//                case 1:
-//                    addPlan();
-//                    break;
-//                case 2:
-//                    viewPlan();
-//                    break;
-//                case 3:
-//                    System.out.println("프로그램을 종료합니다.");
-//                    System.out.println("==========================================================");
-//                    in.close();
-//                    return;
-//            }
-//        }
-//    }
-//
-//    public static void main(String[] args) {
-//        MonthSchedule monthSchedule = new MonthSchedule();
-//        monthSchedule.run();
-//    }
-//}
-//
-//
+import java.util.Scanner;
+
+class Day {
+    public String plan[] = new String[31];
+    Scanner in = new Scanner(System.in);
+    //추가
+    public void addPlan () {
+        System.out.print("일정을 등록할 날짜를 입력하세요 : ");
+        int date = Integer.parseInt(in.nextLine());
+        System.out.print("등록할 일정을 입력하세요. : ");
+        String newPlan = in.nextLine();
+        plan[date-1]=newPlan;
+    }
+    //조회
+    public void showPlan() {
+        System.out.print("조회할 날짜를 입력하세요. : ");
+        int date = in.nextInt();
+        System.out.println("등록된 스케줄 : "+plan[date-1]);
+    }
+}
+
+public class MonthSchedule {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Day MonthSchedule2 = new Day();
+
+        while (true) {
+            System.out.println("원하는 작업을 선택하세요.");
+            System.out.println("==========================================================");
+            System.out.println("1. 스케줄 추가");
+            System.out.println("2. 스케줄 조회");
+            System.out.println("3. 종료");
+            System.out.println("==========================================================");
+
+            int num = Integer.parseInt(in.nextLine());
+
+            switch (num) {
+                case 1:
+                    MonthSchedule2.addPlan();
+                    break;
+                case 2:
+                    MonthSchedule2.showPlan();
+                    break;
+                case 3:
+                    System.out.println("프로그램을 종료합니다.");
+                    System.out.println("==========================================================");
+                    in.close();
+                    return;
+            }
+
+
+        }
+    }
+}
