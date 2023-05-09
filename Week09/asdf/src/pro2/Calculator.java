@@ -72,15 +72,14 @@ public class Calculator {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        while (true) {
-            System.out.print("수식을 입력하세요 : ");
-            String count =in.nextLine();
+        System.out.print("수식을 입력하세요 : ");
+        String count =in.nextLine();
 
-            Count c = new Count();
-            c.setExpression(count);
-            c.calculate();
-            System.out.println("결과 : " + c.getResult());
-        }
+        Count c = new Count();
+        c.setExpression(count);
+        c.calculate();
+        System.out.println("결과 : " + c.getResult());
+
     }
 }
 
