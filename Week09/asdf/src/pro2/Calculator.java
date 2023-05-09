@@ -5,7 +5,6 @@ interface Math {
     String getExpression();
 
     int getIndex();
-
     int getOperator();
     double getResult();
 }
