@@ -8,6 +8,32 @@
     color: #000;
 }
 
+h1{
+    font-size: 48px;
+    font-weight: 100;
+}
+
+.contents1{
+    font-size: 20PX;
+    font-weight: lighter;
+}
+
+.contents3{
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.contents1_bold{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*  ---  */
+
+.result{
+    font-size: 24PX;
+}
+
 .intro_bg{
     background-image: url("image/flash-4244923_1920.png");
     width: 100%;
@@ -59,4 +85,101 @@
 
 .nav > li >a {
     color: #fff;
+}
+
+.amount{
+    position: relative;
+    top: -66px;
+    display: flex;
+    width: 1280px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+.amount>li{
+    flex: 1;
+    height: 132px;
+}
+
+.amount> li > div{
+    text-align: center; 
+    margin-top: 37px;
+    height: 57px;
+}
+
+.amount > li > div:not(:last-child){
+    border-right: 1px solid #E1E1E1;   
+
+}
+
+.intro_text{
+    width: 100%;
+    margin: 231px auto 231px auto;
+    text-align: center;
+}
+
+
+
+.intro_text > h1,
+.intro_text > h4{
+    color: #fff;
+}
+
+/* main_text0 */
+
+.main_text0{
+    width: 100%;
+    height: 601px;
+    margin-top: -132px;
+    background: #f1f3f3;
+}
+
+.main_text0 > h1{
+    padding-top: 116px;
+    text-align: center;
+}
+
+.main_text0 > .contents1{
+    text-align: center;
+}
+
+.icons{
+    display: flex;
+    width: 1280px;
+    height: 302px;
+    margin: auto;
+}
+
+.icons > li{
+    flex: 1;
+    height: 302px;  
+    margin-top: 49px;
+    background: #fff;
+    text-align: center;
+}
+
+.icons > li > .icon_img{
+    margin-top: 16px;
+}
+
+.icons > li:not(:last-child){
+    margin-right: 20px;
+}
+
+.icons .contents2{
+    width: 210px;
+    margin: auto;
+    letter-spacing: -1;
+    padding-top: 5px;
+}
+
+.more{
+    width: 100px;
+    height: 30px;
+    background: darkblue;
+    color: #fff;
+    font-size: 12px;
+    line-height: 30px;
+    margin: 25px auto;
 }
